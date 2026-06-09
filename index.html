@@ -1,1 +1,474 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join Haroon Raseed and Sumaiya Fathima for their Nikah ceremony at N.H. Mahal, Periyakulam-Dindigul By-pass Road on July 5, 2026, plus RSVP details." />
+  <meta name="keywords" content="Haroon Raseed wedding, Sumaiya Fathima nikah, Periyakulam wedding, Muslim Nikah invitation, N.H. Mahal event" />
+  <meta property="og:title" content="Haroon Raseed & Sumaiya Fathima Wedding Invitation" />
+  <meta property="og:description" content="Witness the Nikah of Haroon Raseed and Sumaiya Fathima on July 5, 2026, at N.H. Mahal, Periyakulam." />
+  <meta property="og:type" content="website" />
+  <title>Haroon Raseed & Sumaiya Fathima Wedding Invitation</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
+  <style>
+    @keyframes floatUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    @keyframes floatPetal {
+      0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(100vh) translateX(var(--drift, 0px)) rotate(360deg); opacity: 0; }
+    }
+    .anim-float { animation: floatUp 1s ease-out both; }
+    .floating-petal { animation: floatPetal linear infinite; position: fixed; pointer-events: none; }
+    .anim-fade { animation: fadeIn 1.2s ease-out both; }
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+    .delay-5 { animation-delay: 1s; }
+    .delay-6 { animation-delay: 1.2s; }
 
+    /* === forest green names as requested earlier === */
+    .name-script {
+      color: #374131;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      line-height: 1.8;
+    }
+    @media (min-width: 768px) { .name-script { font-size: 4rem; } }
+
+    /* removed geometric pattern from background – now solid as in image */
+    .islamic-arch { border-radius: 50% 50% 0 0 / 60% 60% 0 0; }
+    .btn-gold {
+      background: linear-gradient(135deg, #c9a84c, #daa520);
+      transition: all 0.3s ease;
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #b8960f, #c9a84c);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px #c9a84c44;
+    }
+    .scroll-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    .scroll-section.visible { opacity: 1; transform: translateY(0); }
+    .toast-notification {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      transition: transform 0.4s ease;
+      z-index: 1000;
+    }
+    .toast-notification.show { transform: translateX(-50%) translateY(0); }
+    .countdown-card {
+      background: linear-gradient(135deg, #faf3e8, #e6e2d4);
+      border: 1px solid #c9a84c33;
+    }
+    body::-webkit-scrollbar { width: 6px; }
+    body::-webkit-scrollbar-track { background: #faf3e8; }
+    body::-webkit-scrollbar-thumb { background: #c9a84c66; border-radius: 3px; }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#faf3e8',
+            ivory: '#e6e2d4',
+            gold: '#c9a84c',
+            goldDark: '#9e7c28',
+            goldLight: '#e8d080',
+            forest: '#2d4a3e',
+            forestDark: '#1e3329',
+            textMain: '#1e3329',
+            textSoft: '#4a6355',
+          }
+        }
+      }
+    }
+  </script>
+  <style>body { box-sizing: border-box; }</style>
+ </head>
+ <body class="h-full">
+  <!-- main wrapper: background color changed to match the original invitation image (solid cream/off-white) -->
+  <div id="app-wrapper" class="w-full h-full overflow-auto" style="background-color: #f3ede2;">
+   <!-- Toast Notification -->
+   <div id="toast" class="toast-notification px-6 py-3 rounded-xl shadow-lg" style="background: linear-gradient(135deg, #c9a84c, #daa520);">
+    <p id="toast-message" class="text-white text-sm font-medium" style="font-family: 'Lora', serif;"></p>
+   </div>
+
+   <!-- Decorative ornamental frame – kept very subtle, does not affect background solid color -->
+   <div class="fixed inset-0 pointer-events-none overflow-hidden" style="z-index: 0;">
+    <div class="absolute top-0 left-0 right-0 h-32 opacity-10" style="background: linear-gradient(180deg, #c9a84c22, transparent); clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);"></div>
+    <div class="absolute left-0 top-0 bottom-0 w-24 opacity-20" style="background: repeating-linear-gradient(90deg, #c9a84c, #c9a84c 2px, transparent 2px, transparent 8px);"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-24 opacity-20" style="background: repeating-linear-gradient(90deg, transparent 0, transparent 6px, #c9a84c 6px, #c9a84c 8px);"></div>
+    <div class="absolute top-4 left-4 w-16 h-16 opacity-10" style="border: 2px solid #c9a84c; border-right: none; border-bottom: none; border-radius: 50% 0 0 0;"></div>
+    <div class="absolute top-6 left-6" style="color: #c9a84c; font-size: 24px; opacity: 0.15;">✦</div>
+    <div class="absolute top-4 right-4 w-16 h-16 opacity-10" style="border: 2px solid #c9a84c; border-left: none; border-bottom: none; border-radius: 0 50% 0 0;"></div>
+    <div class="absolute top-6 right-6" style="color: #c9a84c; font-size: 24px; opacity: 0.15;">✦</div>
+    <div class="absolute" style="top:8%; left:12%; animation: starTwinkle 3s ease-in-out infinite; color: #c9a84c; opacity:0.2; font-size:12px;">✦</div>
+    <div class="absolute" style="top:15%; right:18%; animation: starTwinkle 4s ease-in-out infinite 1s; color: #c9a84c; opacity:0.15; font-size:8px;">✧</div>
+    <div class="absolute" style="top:35%; left:6%; animation: starTwinkle 3.5s ease-in-out infinite 0.5s; color: #c9a84c; opacity:0.2; font-size:10px;">✦</div>
+    <div class="absolute" style="top:55%; right:8%; animation: starTwinkle 4.5s ease-in-out infinite 1.5s; color: #c9a84c; opacity:0.15; font-size:14px;">✧</div>
+    <div class="absolute" style="top:75%; left:15%; animation: starTwinkle 3s ease-in-out infinite 2s; color: #c9a84c; opacity:0.1; font-size:10px;">✦</div>
+    <div class="absolute" style="top:20%; right:12%; width:80px; height:80px; border: 1px solid #c9a84c; border-radius:50%; opacity:0.06;"></div>
+    <div class="absolute" style="bottom:30%; left:10%; width:60px; height:60px; border: 2px solid #c9a84c; border-radius:50%; opacity:0.04;"></div>
+    <div class="absolute" style="top:60%; right:5%; width:40px; height:40px; border: 1px solid #c9a84c; border-radius:50%; opacity:0.08;"></div>
+   </div>
+
+   <div class="relative" style="z-index: 1;">
+    <div id="petals-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden;"></div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="relative min-h-screen flex items-center justify-center px-4 py-12" style="min-height: 100%;">
+     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 islamic-arch opacity-10" style="border: 2px solid #c9a84c; border-bottom: none;"></div>
+     <div class="max-w-lg w-full text-center">
+      <div class="anim-fade">
+       <p id="el-welcome" class="text-lg mb-1" style="font-family: 'Amiri', serif; color: #2d4a3e;">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+       <p id="el-welcome-translation" class="text-xs tracking-widest uppercase mb-8" style="font-family: 'Lora', serif; color: #9e7c28; letter-spacing: 0.2em;">In the name of Allah, the Most Gracious, the Most Merciful</p>
+      </div>
+      <div class="anim-fade delay-1 flex items-center justify-center gap-3 mb-8">
+       <div class="h-px w-16" style="background: linear-gradient(to right, transparent, #c9a84c);"></div>
+       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: #c9a84c;">
+        <path d="M12 2L14.5 9H22L16 13.5L18.5 21L12 16.5L5.5 21L8 13.5L2 9H9.5L12 2Z" fill="currentColor" opacity="0.6" />
+       </svg>
+       <div class="h-px w-16" style="background: linear-gradient(to left, transparent, #c9a84c);"></div>
+      </div>
+      <p class="anim-float delay-1 text-sm tracking-widest uppercase mb-6" style="font-family: 'Lora', serif; color: #4a6355; letter-spacing: 0.25em;">You are cordially invited to the Nikah ceremony of</p>
+      <div class="anim-float delay-2 mb-6">
+       <h1 id="el-groom" class="name-script">Haroon Raseed</h1>
+      </div>
+      <div class="anim-float delay-3 my-2 flex items-center justify-center gap-4">
+       <div class="h-px w-12" style="background: #c9a84c66;"></div>
+       <span class="text-xl" style="font-family: 'Lora', serif; color: #4a6355; letter-spacing: 0.1em;">weds</span>
+       <div class="h-px w-12" style="background: #c9a84c66;"></div>
+      </div>
+      <div class="anim-float delay-4 mb-2">
+       <h1 id="el-bride" class="name-script">Sumaiya Fathima</h1>
+      </div>
+     </div>
+    </section>
+
+    <!-- Scroll indicator -->
+    <div class="flex justify-center py-4">
+     <svg class="animate-bounce" style="width: 24px; height: 24px; color: #c9a84c;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </div>
+
+    <!-- ===== VERSE SECTION ===== -->
+    <section class="scroll-section px-4 py-8">
+     <div class="max-w-lg mx-auto">
+      <div class="relative p-8 md:p-10 rounded-3xl" style="background: linear-gradient(135deg, #e6e2d4, #dedad0); border: 1px solid #c9a84c33; box-shadow: 0 8px 40px #c9a84c0f;">
+       <div class="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 rounded-tl-lg" style="border-color: #c9a84c55;"></div>
+       <div class="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 rounded-tr-lg" style="border-color: #c9a84c55;"></div>
+       <div class="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 rounded-bl-lg" style="border-color: #c9a84c55;"></div>
+       <div class="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 rounded-br-lg" style="border-color: #c9a84c55;"></div>
+       <div class="text-center">
+        <div class="inline-flex items-center gap-2 mb-6">
+         <div class="h-px w-8" style="background: linear-gradient(to right, transparent, #c9a84c);"></div>
+         <span class="tracking-widest uppercase font-bold" style="font-family: 'Lora', serif; color: #c9a84c; letter-spacing: 0.2em;">A Quranic Verse</span>
+         <div class="h-px w-8" style="background: linear-gradient(to left, transparent, #c9a84c);"></div>
+        </div>
+        <p id="el-quote" class="text-lg leading-relaxed italic" style="font-family: 'Amiri', serif; color: #1e3329;">And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He put between you affection and mercy.</p>
+        <p class="text-sm mt-4" style="font-family: 'Lora', serif; color: #4a6355;">— Quran 30:21</p>
+       </div>
+      </div>
+     </div>
+    </section>
+
+    <!-- Scroll indicator -->
+    <div class="flex justify-center py-4">
+     <svg class="animate-bounce" style="width: 24px; height: 24px; color: #c9a84c;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </div>
+
+    <!-- ===== COUNTDOWN SECTION ===== -->
+    <section class="scroll-section px-4 py-8">
+     <div class="max-w-lg mx-auto">
+      <div class="countdown-card relative p-8 md:p-10 rounded-3xl" style="box-shadow: 0 8px 40px #c9a84c0f;">
+       <div class="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 rounded-tl-lg" style="border-color: #c9a84c55;"></div>
+       <div class="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 rounded-tr-lg" style="border-color: #c9a84c55;"></div>
+       <div class="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 rounded-bl-lg" style="border-color: #c9a84c55;"></div>
+       <div class="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 rounded-br-lg" style="border-color: #c9a84c55;"></div>
+       <div class="text-center">
+        <div class="inline-flex items-center gap-2 mb-4">
+         <div class="h-px w-8" style="background: linear-gradient(to right, transparent, #c9a84c);"></div>
+         <span class="tracking-widest uppercase font-bold" style="font-family: 'Lora', serif; color: #c9a84c; letter-spacing: 0.2em;">Counting Down</span>
+         <div class="h-px w-8" style="background: linear-gradient(to left, transparent, #c9a84c);"></div>
+        </div>
+        <h2 class="text-3xl font-light mb-2" style="font-family: 'Cormorant Garamond', serif; color: #1e3329;">The Nikkah begins in</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4" role="timer" aria-live="polite">
+         <div class="countdown-card rounded-2xl px-4 py-5">
+          <p id="countdown-days" class="text-4xl font-light leading-none" style="font-family: 'Cormorant Garamond', serif; color: #1e3329;">00</p>
+          <p class="text-xs tracking-[0.25em] uppercase mt-3" style="font-family: 'Lora', serif; color: #4a6355;">Days</p>
+         </div>
+         <div class="countdown-card rounded-2xl px-4 py-5">
+          <p id="countdown-hours" class="text-4xl font-light leading-none" style="font-family: 'Cormorant Garamond', serif; color: #1e3329;">00</p>
+          <p class="text-xs tracking-[0.25em] uppercase mt-3" style="font-family: 'Lora', serif; color: #4a6355;">Hours</p>
+         </div>
+         <div class="countdown-card rounded-2xl px-4 py-5">
+          <p id="countdown-minutes" class="text-4xl font-light leading-none" style="font-family: 'Cormorant Garamond', serif; color: #1e3329;">00</p>
+          <p class="text-xs tracking-[0.25em] uppercase mt-3" style="font-family: 'Lora', serif; color: #4a6355;">Minutes</p>
+         </div>
+         <div class="countdown-card rounded-2xl px-4 py-5">
+          <p id="countdown-seconds" class="text-4xl font-light leading-none" style="font-family: 'Cormorant Garamond', serif; color: #1e3329;">00</p>
+          <p class="text-xs tracking-[0.25em] uppercase mt-3" style="font-family: 'Lora', serif; color: #4a6355;">Seconds</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+
+    <!-- Scroll indicator -->
+    <div class="flex justify-center py-4">
+     <svg class="animate-bounce" style="width: 24px; height: 24px; color: #c9a84c;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </div>
+
+    <!-- ===== DATE & VENUE SECTION ===== -->
+    <section class="scroll-section px-4 py-8">
+     <div class="max-w-lg mx-auto">
+      <div class="relative p-8 md:p-10 rounded-3xl" style="background: linear-gradient(135deg, #e6e2d4, #dedad0); border: 1px solid #c9a84c33; box-shadow: 0 8px 40px #c9a84c0f;">
+       <div class="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 rounded-tl-lg" style="border-color: #c9a84c55;"></div>
+       <div class="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 rounded-tr-lg" style="border-color: #c9a84c55;"></div>
+       <div class="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 rounded-bl-lg" style="border-color: #c9a84c55;"></div>
+       <div class="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 rounded-br-lg" style="border-color: #c9a84c55;"></div>
+       <div class="text-center">
+        <div class="inline-flex items-center gap-2 mb-6">
+         <div class="h-px w-8" style="background: linear-gradient(to right, transparent, #c9a84c);"></div>
+         <span class="tracking-widest uppercase font-bold" style="font-family: 'Lora', serif; color: #c9a84c; letter-spacing: 0.2em;">Save the Date</span>
+         <div class="h-px w-8" style="background: linear-gradient(to left, transparent, #c9a84c);"></div>
+        </div>
+        <!-- Date -->
+        <div class="mb-6">
+         <div class="flex items-center justify-center gap-2 mb-1">
+          <i data-lucide="calendar" style="width: 18px; height: 18px; color: #c9a84c;"></i>
+          <p class="text-xs tracking-widest uppercase" style="font-family: 'Lora', serif; color: #4a6355;">Date</p>
+         </div>
+         <p id="el-date" class="text-3xl font-light" style="font-family: 'Cormorant Garamond', serif; color: #1e3329;">July 5, 2026</p>
+         <p id="el-day" class="text-sm mt-1" style="font-family: 'Lora', serif; color: #4a6355;">Sunday</p>
+        </div>
+        <div class="w-16 h-px mx-auto mb-6" style="background: #c9a84c44;"></div>
+        <!-- Time -->
+        <div class="mb-6">
+         <div class="flex items-center justify-center gap-2 mb-1">
+          <i data-lucide="clock" style="width: 18px; height: 18px; color: #c9a84c;"></i>
+          <p class="text-xs tracking-widest uppercase" style="font-family: 'Lora', serif; color: #4a6355;">Time</p>
+         </div>
+         <p id="el-time" class="text-3xl font-light" style="font-family: 'Cormorant Garamond', serif; color: #1e3329;">10:30 AM</p>
+        </div>
+        <div class="w-16 h-px mx-auto mb-6" style="background: #c9a84c44;"></div>
+        <!-- Venue -->
+        <div class="mb-8">
+         <div class="flex items-center justify-center gap-2 mb-1">
+          <i data-lucide="map-pin" style="width: 18px; height: 18px; color: #c9a84c;"></i>
+          <p class="text-xs tracking-widest uppercase" style="font-family: 'Lora', serif; color: #4a6355;">Venue</p>
+         </div>
+         <p id="el-venue" class="text-2xl font-light mb-1" style="font-family: 'Cormorant Garamond', serif; color: #1e3329;">N.H. Mahal</p>
+         <p id="el-address" class="text-sm leading-relaxed" style="font-family: 'Lora', serif; color: #4a6355;">Periyakulam-Dindigul By-pass Road,<br>E. Pudupatti - 625 604</p>
+        </div>
+        <!-- Action buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+         <a href="https://maps.google.com/?q=N.H.+Mahal+Periyakulam+Dindigul+Bypass+Road+E+Pudupatti" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all hover:shadow-md text-white" style="font-family: 'Lora', serif; background: linear-gradient(135deg, #9e7c28, #c9a84c);">
+          <i data-lucide="navigation" style="width: 15px; height: 15px;"></i> View on Map
+         </a>
+         <button id="btn-calendar" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all hover:shadow-md text-white" style="font-family: 'Lora', serif; background: linear-gradient(135deg, #9e7c28, #c9a84c);">
+          <i data-lucide="calendar-plus" style="width: 15px; height: 15px;"></i> Add to Calendar
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="px-4 py-12 text-center">
+     <div class="max-w-lg mx-auto">
+      <div class="flex items-center justify-center gap-3 mb-4">
+       <div class="h-px w-12" style="background: linear-gradient(to right, transparent, #c9a84c);"></div>
+       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="color: #c9a84c;">
+        <path d="M12 2L14.5 9H22L16 13.5L18.5 21L12 16.5L5.5 21L8 13.5L2 9H9.5L12 2Z" fill="currentColor" opacity="0.5" />
+       </svg>
+       <div class="h-px w-12" style="background: linear-gradient(to left, transparent, #c9a84c);"></div>
+      </div>
+      <p class="text-lg mb-2" style="font-family: 'Amiri', serif; color: #4a6355;">مَا شَاءَ اللَّهُ</p>
+      <p class="font-bold tracking-widest uppercase" style="font-family: 'Lora', serif; color: #9e7c28; letter-spacing: 0.2em;">We await your gracious presence</p>
+     </div>
+    </footer>
+   </div>
+  </div>
+
+  <script>
+  // ===== FLOATING PETALS =====
+  const petalsContainer = document.getElementById('petals-container');
+  const petals = ['🌸', '🌺', '✨', '💐', '🌷'];
+  function createFloatingElement() {
+    const element = document.createElement('div');
+    const startX = Math.random() * window.innerWidth;
+    const drift = (Math.random() - 0.5) * 200;
+    const duration = 8 + Math.random() * 6;
+    const delay = Math.random() * 5;
+    const size = 20 + Math.random() * 16;
+    element.className = 'floating-petal';
+    element.style.left = startX + 'px';
+    element.style.top = '-30px';
+    element.style.width = size + 'px';
+    element.style.height = size + 'px';
+    element.style.setProperty('--drift', drift + 'px');
+    element.style.animation = `floatPetal ${duration}s linear ${delay}s infinite`;
+    element.style.zIndex = '0';
+    element.style.display = 'flex';
+    element.style.alignItems = 'center';
+    element.style.justifyContent = 'center';
+    element.style.fontSize = size + 'px';
+    element.textContent = petals[Math.floor(Math.random() * petals.length)];
+    petalsContainer.appendChild(element);
+    setTimeout(() => element.remove(), (duration + delay) * 1000);
+  }
+  setInterval(createFloatingElement, 700);
+  for (let i = 0; i < 6; i++) setTimeout(() => createFloatingElement(), i * 350);
+
+  // ===== CONFIG =====
+  const defaultConfig = {
+    groom_name: 'Haroon Raseed',
+    bride_name: 'Sumaiya Fathima',
+    event_date: 'July 5, 2026',
+    event_time: '10:30 AM',
+    venue_name: 'N.H. Mahal',
+    venue_address: 'Periyakulam-Dindigul By-pass Road, E. Pudupatti - 625 604',
+    couple_quote: 'And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He put between you affection and mercy.',
+    background_color: '#f3ede2',
+    primary_action_color: '#c9a84c',
+  };
+  let currentConfig = { ...defaultConfig };
+  let countdownIntervalId = null;
+  const EVENT_TIMEZONE = 'Asia/Kolkata';
+  const EVENT_TIMEZONE_OFFSET = '+05:30';
+  const EVENT_DURATION_HOURS = 4;
+  const monthLookup = {
+    january:0,jan:0,february:1,feb:1,march:2,mar:2,april:3,apr:3,
+    may:4,june:5,jun:5,july:6,jul:6,august:7,aug:7,
+    september:8,sep:8,sept:8,october:9,oct:9,november:10,nov:10,december:11,dec:11
+  };
+  function parseEventDateTime(eventDate, eventTime) {
+    const normalizedDate = (eventDate || '').trim();
+    const normalizedTime = (eventTime || '').trim();
+    let year, month, day;
+    const namedDateMatch = normalizedDate.match(/^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/);
+    const isoDateMatch = normalizedDate.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (namedDateMatch) {
+      month = monthLookup[namedDateMatch[1].toLowerCase()];
+      day = Number(namedDateMatch[2]);
+      year = Number(namedDateMatch[3]);
+    } else if (isoDateMatch) {
+      year = Number(isoDateMatch[1]);
+      month = Number(isoDateMatch[2]) - 1;
+      day = Number(isoDateMatch[3]);
+    } else {
+      const fallback = new Date(`${normalizedDate} ${normalizedTime}`.trim());
+      return Number.isNaN(fallback.getTime()) ? null : fallback;
+    }
+    if (month === undefined) return null;
+    let hours = 0, minutes = 0;
+    const meridiemMatch = normalizedTime.match(/^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)$/i);
+    if (meridiemMatch) {
+      hours = Number(meridiemMatch[1]) % 12;
+      minutes = Number(meridiemMatch[2] || '0');
+      if (meridiemMatch[3].toUpperCase() === 'PM') hours += 12;
+    }
+    const monthValue = String(month + 1).padStart(2, '0');
+    const dayValue = String(day).padStart(2, '0');
+    const hourValue = String(hours).padStart(2, '0');
+    const minuteValue = String(minutes).padStart(2, '0');
+    const parsedDate = new Date(`${year}-${monthValue}-${dayValue}T${hourValue}:${minuteValue}:00${EVENT_TIMEZONE_OFFSET}`);
+    return Number.isNaN(parsedDate.getTime()) ? null : parsedDate;
+  }
+  function formatEventWeekday(dt) {
+    return new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone: EVENT_TIMEZONE }).format(dt);
+  }
+  function formatCalendarTimestamp(dt) {
+    return dt.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+  }
+  function setCountdownValue(unit, value) {
+    const el = document.getElementById(`countdown-${unit}`);
+    if (!el) return;
+    el.textContent = unit === 'days' ? String(value) : String(value).padStart(2, '0');
+  }
+  function renderCountdown(eventDateTime) {
+    if (!eventDateTime) {
+      ['days','hours','minutes','seconds'].forEach(u => {
+        const el = document.getElementById(`countdown-${u}`);
+        if (el) el.textContent = '--';
+      });
+      return;
+    }
+    const remainingMs = eventDateTime.getTime() - Date.now();
+    if (remainingMs <= 0) {
+      ['days','hours','minutes','seconds'].forEach(u => setCountdownValue(u, 0));
+      return;
+    }
+    const totalSeconds = Math.floor(remainingMs / 1000);
+    setCountdownValue('days', Math.floor(totalSeconds / 86400));
+    setCountdownValue('hours', Math.floor((totalSeconds % 86400) / 3600));
+    setCountdownValue('minutes', Math.floor((totalSeconds % 3600) / 60));
+    setCountdownValue('seconds', totalSeconds % 60);
+  }
+  function syncEventTiming(config) {
+    const eventDateTime = parseEventDateTime(config.event_date, config.event_time);
+    const dayEl = document.getElementById('el-day');
+    if (dayEl) dayEl.textContent = eventDateTime ? formatEventWeekday(eventDateTime) : '';
+    if (countdownIntervalId) { window.clearInterval(countdownIntervalId); countdownIntervalId = null; }
+    renderCountdown(eventDateTime);
+    if (eventDateTime && eventDateTime.getTime() > Date.now()) {
+      countdownIntervalId = window.setInterval(() => renderCountdown(eventDateTime), 1000);
+    }
+    return eventDateTime;
+  }
+  function applyConfig(config) {
+    currentConfig = { ...defaultConfig, ...config };
+    syncEventTiming(currentConfig);
+  }
+
+  // ===== ADD TO CALENDAR =====
+  document.getElementById('btn-calendar').addEventListener('click', () => {
+    const eventDateTime = parseEventDateTime(currentConfig.event_date, currentConfig.event_time);
+    if (!eventDateTime) return;
+    const endDateTime = new Date(eventDateTime.getTime() + (EVENT_DURATION_HOURS * 60 * 60 * 1000));
+    const title = `Wedding - ${currentConfig.groom_name} & ${currentConfig.bride_name}`;
+    const start = formatCalendarTimestamp(eventDateTime);
+    const end = formatCalendarTimestamp(endDateTime);
+    const location = `${currentConfig.venue_name}, ${currentConfig.venue_address}`;
+    const details = `Nikah Ceremony of ${currentConfig.groom_name} and ${currentConfig.bride_name}. In Sha Allah.`;
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
+    window.open(url, '_blank');
+  });
+
+  // ===== SCROLL ANIMATIONS =====
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.scroll-section').forEach(section => observer.observe(section));
+
+  lucide.createIcons();
+  applyConfig(defaultConfig);
+  </script>
+ </body>
+</html>
